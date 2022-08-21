@@ -22,7 +22,7 @@
 //* reset foreground and background to normal colours
 #define RESET "\x1B[0m"
 
-// TODO ALL MAIN VARIBLES
+// TODO ALL MAIN VARIABLES
 char *gameArea[9];
 char *mainPlayer = "❌\t";
 char *computer = "⚪\t";
@@ -37,8 +37,7 @@ int winState[9][3] = {
     {1, 4, 7},
     {2, 5, 8},
     {0, 4, 8},
-    {2, 4, 6}
-};
+    {2, 4, 6}};
 
 //! ALL MAIN FUNCTIONS SEE DOWN BELOW
 void drew(void);
@@ -52,9 +51,8 @@ void validate();
 char *winner;
 int main()
 {
-   validate();
+    validate();
 }
-
 
 //! IMPORTANT FUNCTION
 void validate()
@@ -66,29 +64,31 @@ void validate()
         drew();
         userInput();
         autoPlayer();
-        
+
         for (int i = 0; i < 9; i++)
         {
-            printf("%d,%s,%s,%s",i,gameArea[winState[i][0]],gameArea[winState[i][1]],gameArea[winState[i][2]]);
+            printf("%d,%s,%s,%s", i, gameArea[winState[i][0]], gameArea[winState[i][1]], gameArea[winState[i][2]]);
             if (gameArea[winState[i][0]] == mainPlayer & gameArea[winState[i][1]] == mainPlayer & gameArea[winState[i][2]] == mainPlayer)
             {
                 winner = mainPlayer;
-             
-            break;
-                           }
-          else if (gameArea[winState[i][0]] == computer && gameArea[winState[i][1]] == computer && gameArea[winState[i][2]] == computer)
+
+                break;
+            }
+            else if (gameArea[winState[i][0]] == computer && gameArea[winState[i][1]] == computer && gameArea[winState[i][2]] == computer)
             {
                 winner = computer;
                 break;
-                
-            }else{
+            }
+            else
+            {
                 winner = " ";
             }
         }
         {
         }
         drew();
-        if((checkField() == 0) && (winner = " ")) break;
+        if ((checkField() == 0) && (winner = " "))
+            break;
     } while (winner == " " || checkField() == 0);
     checkWinner(winner);
 }
@@ -96,12 +96,12 @@ void validate()
 //? DREWING THE LINES
 void drew()
 {
-    //system("clear");
+    // system("clear");
     printf(GRN BOLD "\n\t|\t|\t" RESET);
     printf(GRN BOLD "\n  %s|  %s|   %s" RESET, gameArea[0], gameArea[1], gameArea[2]);
     printf(GRN BOLD "\n--------|-------|-------" RESET Underlined BOLD "\t\e[1;98mwww.github.com/DSDmark" RESET);
     printf(GRN BOLD "\n\t|\t|\t" RESET);
-    printf(GRN BOLD "\n  %s|  %s|  %s" RESET  BOLD "\t\e[7;77m\e[1;92m\e[5;77mUnder The work:)" RESET, gameArea[3], gameArea[4], gameArea[5]);
+    printf(GRN BOLD "\n  %s|  %s|  %s" RESET BOLD "\t\e[7;77m\e[1;92m\e[5;77mUnder The work:)" RESET, gameArea[3], gameArea[4], gameArea[5]);
     printf(GRN BOLD "\n--------|-------|-------" RESET);
     printf(GRN BOLD "\n\t|\t|\t" RESET);
     printf(GRN BOLD "\n  %s|  %s|  %s\n\n" RESET, gameArea[6], gameArea[7], gameArea[8]);
@@ -135,7 +135,7 @@ void checkWinner(char *winner)
 {
     if (winner == mainPlayer)
     {
-        printf(YEL Underlined BOLD "👑 Hey, Nice plyed you win\n\n" RESET);
+        printf(YEL Underlined BOLD "👑 Hey, Nice played you win\n\n" RESET);
     }
     else if (winner == computer)
     {
@@ -157,7 +157,7 @@ void userInput()
         scanf("%d", &x);
         x--;
 
-        // TODO VALIDET THE INPUT FIELD
+        // TODO VALIDATE THE INPUT FIELD
         if (0 >= x)
         {
             printf(Strikethrough gRED GRN "\n🤠 Hey boy, Enter a valid input ❕" RESET);
@@ -177,7 +177,7 @@ void userInput()
     } while (gameArea[x] != checkSpace);
 }
 
-//? AUTO PLAYER FOR 0								
+//? AUTO PLAYER FOR 0
 void autoPlayer()
 {
     int x, y;
