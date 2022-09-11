@@ -25,9 +25,9 @@ Once you are done  you can close the application in your terminal to quit the ap
 
 </div>
 
-### TicTacToc
+### TicTacToc Cli
 
-![TicTacToc](images/perview.gif "Sorting")
+![TicTacTocCli](images/perview.gif "TicTacTocCli")
 
 </div>
 
