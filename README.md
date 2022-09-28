@@ -1,5 +1,11 @@
 <div align="center">
 
+
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/TictactocCli)
+![GitHub](https://img.shields.io/github/license/DSDmark/TictactocCli)
+![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/TictactocCli)
+![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/TictactocCli)
+
 # CLIsapplications Collections
 
 <div>
