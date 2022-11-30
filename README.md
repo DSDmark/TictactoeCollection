@@ -14,6 +14,9 @@
 
 <div align="left">
 
+## Purpose
+
+> It's a BASIC game based on ***c language***. If you're going to learn about **c**. then, this application will help you with how things work in **c**.
 
 ---
 
