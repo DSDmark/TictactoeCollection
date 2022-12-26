@@ -24,9 +24,10 @@
 
 1. Click on green **Clone or download** button and choose Download ZIP.
 2. Find the downloaded zipped file on your pc and extract it.
-3. Go to the **bin** folder and open Terminal in there.
 3. Rum commend
-> ```./main```
+> `gcc-10 ./main.c -o ./bin/main.exe && ./bin/main.exe`
+
+Note:- Run that commend accoding to your `omplier`.
 
 Once you are done  you can close the application in your terminal to quit the application.
 
