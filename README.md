@@ -27,7 +27,7 @@
 3. Rum commend
 > `gcc-10 ./main.c -o ./bin/main.exe && ./bin/main.exe`
 
-> **Note**:- Run that commend accoding to your `omplier`.
+> **Note**:- Run that commend accoding to your `complier`.
 
 Once you are done  you can close the application in your terminal to quit the application.
 
