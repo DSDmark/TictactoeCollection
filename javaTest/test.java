@@ -47,17 +47,17 @@ public class TicTacToe {
     System.out.flush();
 
     // printing  the area of game
-    System.out.println("\n         |        |       ");
-    System.out.println("    "+gameArea[0]+"   |   "+gameArea[1]+"   |  "+gameArea[2]+"  ");
-    System.out.println("         |        |        ");
-    System.out.println(" --------|--------|--------");
-    System.out.println("         |        |       ");
-    System.out.println("    "+gameArea[3]+"   |   "+gameArea[4]+"   |  "+gameArea[5]+"  ");
-    System.out.println("         |        |       ");
-    System.out.println(" --------|--------|--------");
-    System.out.println("         |        |       ");
-    System.out.println("    "+gameArea[6]+"   |   "+gameArea[7]+"   |  "+gameArea[8]+"  ");
-    System.out.println("         |        |      \n");
+    System.out.println(GREEN+"\n         |        |       "+RESET);
+    System.out.println(GREEN+"    "+gameArea[0]+"   |   "+gameArea[1]+"   |  "+gameArea[2]+"  "+RESET);
+    System.out.println(GREEN+"         |        |        "+RESET);
+    System.out.println(GREEN+" --------|--------|--------"+RESET);
+    System.out.println(GREEN+"         |        |       "+RESET);
+    System.out.println(GREEN+"    "+gameArea[3]+"   |   "+gameArea[4]+"   |  "+gameArea[5]+"  "+RESET);
+    System.out.println(GREEN+"         |        |       "+RESET);
+    System.out.println(GREEN+" --------|--------|--------"+RESET);
+    System.out.println(GREEN+"         |        |       "+RESET);
+    System.out.println(GREEN+"    "+gameArea[6]+"   |   "+gameArea[7]+"   |  "+gameArea[8]+"  "+RESET);
+    System.out.println(GREEN+"         |        |      \n"+RESET);
   }
 
   public int chackIsAreaFull(){
