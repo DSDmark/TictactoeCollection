@@ -128,18 +128,18 @@ int checkField()
 //? CHECK THE WINNER
 void checkWinner(char *winner)
 {
-    if (strcmp(winner, mainPlayer) == 0)
-    {
-        printf(YEL Underlined BOLD "👑 Hey, Nice played you win\n\n" RESET);
-    }
-    else if (strcmp(winner, computer) == 0)
-    {
-        printf(BLU Underlined BOLD "😝 So sad,Try next time \n\n" RESET);
-    }
-    else
-    {
-        printf(CYN Underlined BOLD "😞 It's a Tie!, What a shame\n\n" RESET);
-    }
+  if (strcmp(winner, mainPlayer) == 0)
+  {
+    printf(YEL Underlined BOLD "👑 Hey, Nice played you win\n\n" RESET);
+  }
+else if (strcmp(winner, computer) == 0)
+  {
+    printf(BLU Underlined BOLD "😝 So sad,Try next time \n\n" RESET);
+  }
+else
+  {
+    printf(CYN Underlined BOLD "😞 It's a Tie!, What a shame\n\n" RESET);
+  }
 }
 
 // ? TAKE INPUT FROM USER
