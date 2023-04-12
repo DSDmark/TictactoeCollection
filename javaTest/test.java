@@ -11,34 +11,28 @@ public class TicTacToe {
   static String  computer = "🟡";
   static String spaces = "  ";
   static String winner = new String();
+  static String AUTHOR_NAME = "DSDmark";
+  static String AUTHOR_GITHUB_ID = "https://www.github.com/DSDmark";
 
   // colors
   static final String RESET = "\u001B[0m";
   static final String BLACK = "\u001B[30m";
   static final String RED = "\u001B[31m";
   static final String GREEN = "\u001B[32m";
-  static final String YELLOW = "\u001B[33m";
-  static final String BLUE = "\u001B[34m";
   static final String MAGENTA = "\u001B[35m";
-  static final String CYAN = "\u001B[36m";
-  static final String WHITE = "\u001B[37m";
 
   // Background colors
-  static final String BGC_RED = "\u001B[41m";
   static final String BGC_GREEN = "\u001B[42m";
   static final String BGC_YELLOW = "\u001B[43m";
   static final String BGC_BLUE = "\u001B[44m";
   static final String BGC_MAGENTA = "\u001B[45m";
-  static final String BGC_CYAN = "\u001B[46m";
-  static final String BGC_WHITE = "\u001B[47m";
 
   // Text styles
   static final String BOLD = "\u001B[1m";
-  static final String ITALIC = "\u001B[3m";
   static final String UNDERLINE = "\u001B[4m";
 
   // winning conditions  
-  static int[][] winnerStatments = new int[][]{{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
+  static int[][] winnerState = new int[][]{{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
 
   public final static void printBoard(){
 
@@ -46,31 +40,19 @@ public class TicTacToe {
     System.out.print("\033[H\033[2J"); 
     System.out.flush();
 
-    // There is two way to printing  the area of game 1st one see down below
+    // creating the game area
+    System.out.println(GREEN+"\n         |        |       "+RESET);
+    System.out.println(GREEN+"    "+gameArea[0]+"   |   "+gameArea[1]+"   |  "+gameArea[2]+"  "+RESET);
+    System.out.println(GREEN+"         |        |        "+RESET);
+    System.out.println(GREEN+" --------|--------|--------\t"+BGC_YELLOW+BLACK+UNDERLINE+"CREATE BY "+AUTHOR_NAME+RESET);
+    System.out.println(GREEN+"         |        |       "+RESET);
+    System.out.println(GREEN+"    "+gameArea[3]+"   |   "+gameArea[4]+"   |  "+gameArea[5]+"  \t"+BGC_BLUE+UNDERLINE+AUTHOR_GITHUB_ID+RESET);
+    System.out.println(GREEN+"         |        |       "+RESET);
+    System.out.println(GREEN+" --------|--------|--------"+RESET);
+    System.out.println(GREEN+"         |        |       "+RESET);
+    System.out.println(GREEN+"    "+gameArea[6]+"   |   "+gameArea[7]+"   |  "+gameArea[8]+"  "+RESET);
+    System.out.println(GREEN+"         |        |      \n"+RESET);
 
-    // System.out.println(GREEN+"\n         |        |       "+RESET);
-    // System.out.println(GREEN+"    "+gameArea[0]+"   |   "+gameArea[1]+"   |  "+gameArea[2]+"  "+RESET);
-    // System.out.println(GREEN+"         |        |        "+RESET);
-    // System.out.println(GREEN+" --------|--------|--------"+RESET);
-    // System.out.println(GREEN+"         |        |       "+RESET);
-    // System.out.println(GREEN+"    "+gameArea[3]+"   |   "+gameArea[4]+"   |  "+gameArea[5]+"  "+RESET);
-    // System.out.println(GREEN+"         |        |       "+RESET);
-    // System.out.println(GREEN+" --------|--------|--------"+RESET);
-    // System.out.println(GREEN+"         |        |       "+RESET);
-    // System.out.println(GREEN+"    "+gameArea[6]+"   |   "+gameArea[7]+"   |  "+gameArea[8]+"  "+RESET);
-    // System.out.println(GREEN+"         |        |      \n"+RESET);
-
-    // here is the second one.
-    for (int row = 0; row < 3; row++) {
-      System.out.println(GREEN + "         |        |        " + RESET);
-      System.out.println(GREEN + "    " + gameArea[row * 3] + "   |   " + gameArea[row * 3 + 1] + "   |  " + gameArea[row * 3 + 2] + "  " + RESET);
-      System.out.println(GREEN + "         |        |        " + RESET);
-
-      if (row != 2) {
-        System.out.println(GREEN + " --------|--------|--------" + RESET);
-      }
-    }
-    System.out.println();
   }
 
   public final  int chackIsAreaFull(){
@@ -101,6 +83,19 @@ public class TicTacToe {
     }
   }
 
+  private final void checkWinState(){
+    for(int i=0;i<gameArea.length;i++){
+      String a,b,c = new String();
+
+      // a = gameArea[winnerState[i][0]];
+      // b = gameArea[winnerState[i][1]];
+      // c = gameArea[winnerState[i][2]];
+
+      System.out.printf("%s\n",ab);
+
+    }
+  }
+
   public void getInput(){
 
     Scanner sc = new Scanner(System.in);
@@ -110,6 +105,7 @@ public class TicTacToe {
 
       try{
 
+        checkWinState();
         System.out.print("  "+BOLD+BGC_GREEN+BLACK+"Enter your Box number:"+RESET+" ");
         x = sc.nextInt();
         x--;
@@ -119,7 +115,7 @@ public class TicTacToe {
         checkWinner(computer);
       } catch(InputMismatchException e){      
 
-        System.out.println(BOLD+BGC_RED+BLACK+ "\noops..🚯 entered value is not number.."+RESET);
+        System.out.println(BOLD+BGC_MAGENTA+BLACK+ "\noops..🚯 entered value is not number.."+RESET);
         sc.next();     // consume the non-integer input and clear the Scanner buffer
         
       } catch(ArrayIndexOutOfBoundsException e){
