@@ -67,9 +67,8 @@ public class TicTacToe {
   }
 
   public final  void initValues(){
-
     for(int i=0;i<gameArea.length;i++){
-      gameArea[i] = spaces; 
+      gameArea[i] = this.spaces; 
     }
   }
 
@@ -84,39 +83,55 @@ public class TicTacToe {
   }
 
   private final void checkWinState(){
-    for(int i=0;i<gameArea.length;i++){
-      String a,b,c = new String();
+    
+for (int i = 0; i < winnerState.length; i++) {
+    int index1 = winnerState[i][0];
+    int index2 = winnerState[i][1];
+    int index3 = winnerState[i][2];
 
-      // a = gameArea[winnerState[i][0]];
-      // b = gameArea[winnerState[i][1]];
-      // c = gameArea[winnerState[i][2]];
-
-      System.out.printf("%s\n",ab);
-
+    if (index1 < 0 || index1 >= gameArea.length ||
+        index2 < 0 || index2 >= gameArea.length ||
+        index3 < 0 || index3 >= gameArea.length) {
+        throw new IndexOutOfBoundsException("Invalid index in winnerState array");
     }
+
+    String a = gameArea[index1];
+    String b = gameArea[index2];
+    String c = gameArea[index3];
+
+    if (a == spaces || b == spaces || c == spaces) {
+        continue;
+    }
+    if (a == b && b == c) {
+        winner = b;
+        break;
+    }
+}
   }
 
   public void getInput(){
-
     Scanner sc = new Scanner(System.in);
     int x = 1; 
 
     do{
-
       try{
 
-        checkWinState();
         System.out.print("  "+BOLD+BGC_GREEN+BLACK+"Enter your Box number:"+RESET+" ");
         x = sc.nextInt();
         x--;
-        gameArea[x] = computer;
-        printBoard(); 
 
-        checkWinner(computer);
+        if(gameArea[x] !=spaces){
+          throw new InputMismatchException();
+        }else{
+          gameArea[x] = mainPlayer;
+          autoPlayer();
+          printBoard(); 
+          checkWinState();
+        } 
       } catch(InputMismatchException e){      
 
         System.out.println(BOLD+BGC_MAGENTA+BLACK+ "\noops..🚯 entered value is not number.."+RESET);
-        sc.next();     // consume the non-integer input and clear the Scanner buffer
+        sc.nextLine();     // consume the non-integer input and clear the Scanner buffer
         
       } catch(ArrayIndexOutOfBoundsException e){
 
@@ -124,15 +139,25 @@ public class TicTacToe {
       } 
 
     }while((gameArea.length != chackIsAreaFull()) && winner.isEmpty()); 
+    checkWinner(winner);
+  }
+
+  public final void autoPlayer(){
+    int x = 0; 
+      if(chackIsAreaFull() !=0){
+    do{
+        x = (int)(Math.random()* (8 - 0)+1);
+    }while(gameArea[x] != spaces) ;
+    gameArea[x] = computer;
+    printBoard();
+      }
   }
 
   public static void main(String[] args) {
-
     TicTacToe game = new TicTacToe();
     game.initValues();
     game.printBoard();
     game.getInput();
-
   }
 }
 

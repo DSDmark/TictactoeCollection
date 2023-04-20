@@ -67,6 +67,7 @@ void validate() {
       drew();
       break;
     }
+
   } while (strcmp(winner, " ") == 0 || checkField() != 0);
   checkWinner(winner);
 }
