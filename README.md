@@ -29,14 +29,6 @@
 
 ---
 
-</div>
-
-### Tic-Tac-Tie Collections
-
-![**Tic-Tac-Tie Collections**](assets/images/perview.gif "Tic-Tac-Tie Collections")
-
-</div>
-
 > If you have any issues with that Application feel free to let me know!
 
 > If you are more interested, check out the [ **DSDmark**](https://github.com/DSDmark/ "DSDmark").
