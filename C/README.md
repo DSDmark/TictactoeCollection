@@ -6,7 +6,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/TictactocCli)
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/TictactocCli)
 
-# CLIsapplications Collections
+# Tictactoe
 
 <div>
 
@@ -35,9 +35,9 @@ Once you are done  you can close the application in your terminal to quit the ap
 
 </div>
 
-### TicTacToc Cli
+### Tictactoe
 
-![TicTacTocCli](assets/images/perview.gif "TicTacTocCli")
+![TicTacTocCli](../assets/images/c-perview.gif "TicTacTocCli")
 
 </div>
 

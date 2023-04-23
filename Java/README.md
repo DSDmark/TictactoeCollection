@@ -6,7 +6,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/TictactocCli)
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/TictactocCli)
 
-# CLIsapplications Collections
+# Tictactoe
 
 <div>
 
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-> It's a BASIC game based on ***c language***. If you're going to learn about **c**. then, this application will help you with how things work in **c**.
+> It's a BASIC game based on ***java language***. If you're going to learn about **java**. then, this application will help you with how things work in **java**.
 
 ---
 
@@ -35,9 +35,9 @@ Once you are done  you can close the application in your terminal to quit the ap
 
 </div>
 
-### TicTacToc Cli
+### Tictactoe
 
-![TicTacTocCli](assets/images/perview.gif "TicTacTocCli")
+![TicTacTocCli](../assets/images/java-perview.gif "TicTacTocCli")
 
 </div>
 

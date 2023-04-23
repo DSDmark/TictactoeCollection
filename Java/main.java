@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class TicTacToe {
+class TicTacToe {
 
   // main varibles of game
   static String[] boardArea = new String[8];
@@ -83,30 +83,30 @@ public class TicTacToe {
   }
 
   private final void checkWinState(){
-    
-for (int i = 0; i < winnerState.length; i++) {
-    int index1 = winnerState[i][0];
-    int index2 = winnerState[i][1];
-    int index3 = winnerState[i][2];
 
-    if (index1 < 0 || index1 >= gameArea.length ||
-        index2 < 0 || index2 >= gameArea.length ||
-        index3 < 0 || index3 >= gameArea.length) {
+    for (int i = 0; i < winnerState.length; i++) {
+      int index1 = winnerState[i][0];
+      int index2 = winnerState[i][1];
+      int index3 = winnerState[i][2];
+
+      if (index1 < 0 || index1 >= gameArea.length ||
+      index2 < 0 || index2 >= gameArea.length ||
+      index3 < 0 || index3 >= gameArea.length) {
         throw new IndexOutOfBoundsException("Invalid index in winnerState array");
-    }
+      }
 
-    String a = gameArea[index1];
-    String b = gameArea[index2];
-    String c = gameArea[index3];
+      String a = gameArea[index1];
+      String b = gameArea[index2];
+      String c = gameArea[index3];
 
-    if (a == spaces || b == spaces || c == spaces) {
+      if (a == spaces || b == spaces || c == spaces) {
         continue;
-    }
-    if (a == b && b == c) {
+      }
+      if (a == b && b == c) {
         winner = b;
         break;
+      }
     }
-}
   }
 
   public void getInput(){
@@ -132,25 +132,24 @@ for (int i = 0; i < winnerState.length; i++) {
 
         System.out.println(BOLD+BGC_MAGENTA+BLACK+ "\noops..🚯 entered value is not number.."+RESET);
         sc.nextLine();     // consume the non-integer input and clear the Scanner buffer
-        
+
       } catch(ArrayIndexOutOfBoundsException e){
 
-       System.out.println(BOLD+BGC_YELLOW+BLACK+"\n🤠 Hey dude, Enter a valid number"+RESET);
+        System.out.println(BOLD+BGC_YELLOW+BLACK+"\n🤠 Hey dude, Enter a valid number"+RESET);
       } 
-
-    }while((gameArea.length != chackIsAreaFull()) && winner.isEmpty()); 
+    }while(gameArea.length-1 != chackIsAreaFull() && winner.isEmpty()); 
     checkWinner(winner);
   }
 
   public final void autoPlayer(){
     int x = 0; 
-      if(chackIsAreaFull() !=0){
-    do{
+    if(chackIsAreaFull() !=0){
+      do{
         x = (int)(Math.random()* (8 - 0)+1);
-    }while(gameArea[x] != spaces) ;
-    gameArea[x] = computer;
-    printBoard();
-      }
+      }while(gameArea[x] != spaces) ;
+      gameArea[x] = computer;
+      printBoard();
+    }
   }
 
   public static void main(String[] args) {
