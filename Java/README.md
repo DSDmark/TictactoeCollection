@@ -25,7 +25,7 @@
 1. Click on green **Clone or download** button and choose Download ZIP.
 2. Find the downloaded zipped file on your pc and extract it.
 3. Rum commend
-> `gcc-10 ./main.c -o ./bin/main.exe && ./bin/main.exe`
+> `java main.java`
 
 > **Note**:- Run that commend accoding to your `complier`.
 
