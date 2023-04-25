@@ -25,7 +25,7 @@
 1. Click on green **Clone or download** button and choose Download ZIP.
 2. Find the downloaded zipped file on your pc and extract it.
 3. Rum commend
-> `java main.java`
+> `java main.java` or `javac /bin/TicTacToe` and `java /bin/TicTacToe`
 
 > **Note**:- Run that commend accoding to your `complier`.
 
